@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to C++</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    
+    <!--Start of main-->
+    <main id="main-doc">
+      
+      <!--Section 1-->
+      <section class="main-section" id="Getting_Started_with_C++">
+        <header>Getting Started with C++</header>
+        <article>
+          <p>C++ is a powerful and widely-used programming language that offers high-level abstraction and low-level control. It was developed as an extension of the C programming language and provides additional features such as object-oriented programming (OOP) and generic programming.</p>
+          <p> In this chapter, we will introduce the basics of C++ and guide you through the process of setting up a development environment.</p>
+        </article>
+        <article>
+          <h2>What is C++?</h2>
+          <p>C++ is a statically typed, compiled programming language designed for system programming, embedded systems, and general-purpose software development. </p>
+          <p>It combines the features of both high-level and low-level languages, making it suitable for a wide range of applications.</p>
+        </article>
+        <article>
+        <h2>Setting up the Development Environment</h2>
+          <p>To write and run C++ programs, you need a C++ compiler and an integrated development environment (IDE). There are several options available, such as Visual Studio, Code::Blocks, and Eclipse. In this example, we will use the GNU Compiler Collection (GCC) along with a text editor like Visual Studio Code.</p>
+          <h4>Installing GCC</h4>
+          <p>To install GCC on your system, follow the appropriate instructions for your operating system. For Linux, you can use the package manager. For Windows, you can download and install MinGW, which includes GCC.</p>
+          <h4>Setting up Visual Studio Code</h4>
+          <ol>
+            <li>Install Visual Studio Code from the official website.</li>
+            <li>Open Visual Studio Code and install the C++ extension by Microsoft.</li>
+            <li>Create a new folder for your C++ projects and open it in Visual Studio Code.</li>
+            <li>Create a new file with the .cpp extension and start writing your C++ code.</li>
+            <li>Start Coding!</li>
+          </ol>
+        </article>
+        <article>
+          <h2>Hello, World!</h2>
+          <p>Let's begin with the traditional "Hello, World!" program, which simply displays the text "Hello, World!" on the screen. This program serves as a simple introduction to the basic syntax of C++.</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+  std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre>
+          <p>In this program, we <code class="single-lines">include</code> the <code class="single-lines">iostream</code> header file, which provides input and output streams.</p>
+          <p>The <code class="single-lines">main()</code> function is the entry point of every C++ program.</p>
+          <p>The statement <code class="single-lines">std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</code>prints the text <code><b>"Hello, World!"</b></code> to the standard output.</p>
+          <p>Finally, <code class="single-lines">return 0;</code> indicates successful program termination.</p>
+        </article>
+      </section>
+      
+      <!--Section 2-->
+      <section class="main-section" id="Variables_and_Data_Types">
+        <header>Variables and Data Types</header>
+        <article>
+          <p>In this chapter, we will explore variables and data types in C++.</p>
+          <p>Variables allow us to store and manipulate data, while data types define the nature and range of the data that can be stored in variables.</p>
+        </article>
+        <article>
+          <h2>Variables</h2>
+          <p>In C++, variables are named storage locations that hold values.</p>
+          <p>Before using a variable, you must declare its type and name.</p>
+          <p> Here's an example of declaring and initializing variables:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    // Variable declaration and initialization
+    int age = 25;
+    double pi = 3.14159;
+    char grade = 'A';
+
+    // Output variable values
+    std::cout &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Pi: " &lt;&lt; pi &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Grade: " &lt;&lt; grade &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+          <p>In this code snippet, we declare and initialize three variables: <code><b>age</b></code> of type <code style="color: blue">int</code>, <code><b>pi</b></code> of type <code style="color: blue">double</code>, and <code><b>grade</b></code> of type <code style="color: blue">char</code>.</p>
+          <p>We then output the values of these variables using <code class="single-lines">std::cout</code>.</p>
+        </article>
+        <article>
+          <h2>Basic Data Types</h2>
+          <p>C++ provides several basic data types, such as <code class="single-lines">int, double, char, bool,</code> and more. </p>
+          <p>These data types determine the range and precision of values that can be stored in variables. Here's an example:</p>
+          <pre><code>#include &lt;iostream&gt;
+
+int main() 
+{
+    int myInt = 42;
+    double myDouble = 3.14;
+    char myChar = 'A';
+    bool myBool = true;
+
+    std::cout &lt;&lt; "Integer: " &lt;&lt; myInt &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Double: " &lt;&lt; myDouble &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Character: " &lt;&lt; myChar &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Boolean: " &lt;&lt; myBool &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+          <p>In this example, we declare variables of different data types and assign values to them. We then output the values using <code class="single-lines">std::cout</code>.</p>
+        </article>
+      </section>
+      
+      <!--Section 3-->
+      <section class="main-section" id="Control_Structures">
+        <header>Control Structures</header>
+        <article>
+          <p>Control structures allow us to modify the flow of execution in a C++ program.</p>
+          <p>In this chapter, we will explore decision-making and looping structures that enable us to make choices and repeat code blocks.</p>
+        </article>
+        <article>
+          <h2>If-Else Statement</h2>
+          <p>The <code><b>if-else</b></code> statement is used to perform conditional execution in C++. It allows us to execute different blocks of code based on a given condition.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    int age = 18;
+
+    if (age &gt;= 18) 
+    {
+        std::cout &lt;&lt; "You are eligible to vote." &lt;&lt; std::endl;
+    } 
+    else 
+    {
+        std::cout &lt;&lt; "You are not eligible to vote." &lt; std::endl;
+    }
+    return 0;
+}
+</code></pre>
+          <p>In this code, we check if the variable <code><b>age</b></code> is greater than or equal to 18 using the <code class="single-lines">if</code> statement.</p>
+          <p>If the condition is <code style="color: blue">true</code>, the first block of code is executed; otherwise, the code inside the <code class="single-lines">else</code> block is executed.</p>
+        </article>
+        <article>
+          <h2>Switch Statement</h2>
+          <p>The <code class="single-lines">switch</code> statement provides an alternative way to perform multiway branching based on the value of an expression. It allows us to execute different blocks of code based on different possible values.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    int day = 3;
+
+    switch (day) 
+    {
+        case 1:
+            std::cout &lt;&lt; "Monday" &lt;&lt; std::endl;
+            break;
+        case 2:
+            std::cout &lt;&lt; "Tuesday" &lt;&lt; std::endl;
+            break;
+        case 3:
+            std::cout &lt;&lt; "Wednesday" &lt;&lt; std::endl;
+            break;
+        default:
+            std::cout &lt;&lt; "Invalid day" &lt;&lt; std::endl;
+            break;
+    }
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, the value of the variable <b>day</b> is checked against different cases using the <code class="single-lines">switch</code> statement.</p>
+          <p> If the value matches a <code class="single-lines">case</code>, the corresponding block of code is executed.</p>
+          <p>The <code class="single-lines">break</code> statement is used to exit the <code class="single-lines">switch</code> block once a case is matched.</p>
+        </article>
+      </section>
+      
+      <!--Section 4-->
+      <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article>
+          <p>Functions in C++ are reusable blocks of code that perform specific tasks. They allow us to break our programs into smaller, modular pieces. </p>
+          <p>In this chapter, we will explore function declaration, definition, and calling.</p>
+        </article>
+        <article>
+          <h2>Function Declaration</h2>
+          <p>To use a function in C++, you must first declare it. Function declarations provide the necessary information about the function's name, return type, and parameters.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// Function declaration
+int addNumbers(int a, int b);
+
+int main() 
+{
+    int num1 = 5;
+    int num2 = 7;
+
+    // Function calling
+    int sum = addNumbers(num1, num2);
+    std::cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; std::endl;
+
+    return 0;
+}
+
+// Function definition
+int addNumbers(int a, int b) 
+{
+    return a + b;
+}
+</code></pre>
+          <p>In this code, we declare the <code class="single-lines">addNumbers()</code> function before the <code class="single-lines">main()</code> function. </p>
+          <p>The function declaration specifies that <code class="single-lines">addNumbers()</code> takes two integers as parameters and returns an integer.</p>
+          <p>The function definition is placed after the <code class="single-lines">main()</code> function and contains the actual implementation of the function.</p>
+        </article>
+        <article>
+          <h2>Function Calling</h2>
+          <p>To call a function in C++, you simply use its name followed by parentheses and any required arguments.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language cpp">#include &lt;iostream&gt;
+
+// Function declaration
+void greet();
+
+int main() 
+{
+    // Function calling
+    greet();
+
+    return 0;
+}
+
+// Function definition
+void greet() 
+{
+    std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+}
+</code></pre>
+          <p>In this code, we declare and define the <code class="single-lines">greet()</code> function, which doesn't take any arguments and doesn't return a value.</p>
+          <p>Inside the <code class="single-lines">main()</code> function, we call <code class="single-lines">greet()</code> to execute the code inside it.</p>
+        </article>
+      </section>
+      <!--Section 5-->
+      <section class="main-section" id="Arrays">
+        <header>Arrays</header>
+        <article>
+          <p>Arrays in C++ are used to store multiple values of the same data type in contiguous memory locations.</p>
+          <p>In this chapter, we will explore arrays, their declaration, initialization, and accessing elements.</p>
+        </article>
+        <article>
+          <h2>Array Declaration and Initialization</h2>
+          <p>To declare an array in C++, you specify the data type of the elements followed by the name of the array and the size within square brackets.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+  int main() 
+  {
+      // Array declaration and initialization
+      int numbers[5] = {1, 2, 3, 4, 5};
+
+      return 0;
+  }
+  </code></pre>
+          <p><span style="color: brown">Note:</span> Array indexes start with 0: [0] is the first element. [1] is the second element, etc.</p>
+          <p>In this code, we declare an integer array named <b>numbers</b> with a size of 5.</p>
+          <p>We initialize the array with the values 1, 2, 3, 4, and 5.</p>
+        </article>
+        <article>
+          <h2>Accessing Array Elements</h2>
+          <p>You can access individual elements of an array using the array name followed by the index within square brackets.</p>
+          <p> Array indices start from 0 for the first element and go up to size-1 for the last element.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    int numbers[5] = {1, 2, 3, 4, 5};
+
+    // Accessing array elements
+    std::cout &lt;&lt; numbers[0] &lt;&lt; std::endl;  // Output: 1
+    std::cout &lt;&lt; numbers[2] &lt;&lt; std::endl;  // Output: 3
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we access the first and third elements of the <b>numbers</b> array using the indices 0 and 2, respectively.</p>
+        </article>
+      </section>
+      
+      <!--Section 6-->
+      <section class="main-section" id="Pointers">
+        <header>Pointers</header>
+        <article>
+          <p>Pointers are variables that store memory addresses.</p>
+          <p>They enable us to manipulate memory directly and facilitate dynamic memory allocation.</p>
+          <p>In this chapter, we will explore pointers, their declaration, initialization, and usage.</p>
+        </article>
+        <article>
+          <h2>Pointer Declaration and Initialization</h2>
+          <p>o declare a pointer in C++, you use the <code class="single-lines">*</code> symbol before the pointer name.</p>
+          <p>Pointers must be initialized with the memory address of a variable.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    int number = 42;
+    int* ptr = &number;
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we declare an integer variable <b>number</b> and initialize it with the value <span style="color: orange">42</span></p>
+          <p>We also declare a pointer <b>ptr</b> and initialize it with the memory address of number using the <code class="single-lines">&</code> operator.</p>
+        </article>
+        <article>
+          <h2>Dereferencing Pointers</h2>
+          <p>To access the value stored at a memory address pointed by a pointer, we use the dereference operator <code class="single-lines">*</code> .</p>
+          <p> Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    int number = 42;
+    int* ptr = &number;
+
+    // Dereferencing the pointer
+    std::cout &lt;&lt; "Value: " &lt;&lt; *ptr &lt;&lt; std::endl;  // Output: 42
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we dereference the ptr pointer using *ptr to obtain the value stored at the memory address it points to.</p>
+        </article>
+      </section>
+      
+      <!--Section 7-->
+      <section class="main-section" id="OOP">
+      <header>OOP</header>
+      <article>
+        <p>C++ supports object-oriented programming (OOP) concepts such as classes, objects, inheritance, and polymorphism.</p>
+        <p> In this chapter, we will introduce the basics of OOP in C++.</p>
+      </article>
+      <article>
+        <h2>Classes and Objects</h2>
+        <p>In C++, a class is a blueprint for creating objects. It defines the properties (data members) and behaviors (member functions) of objects</p>
+        <p>Here's an example of a class:</p>
+        <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+class Rectangle 
+{
+    int width;
+    int height;
+
+public:
+    // Constructor
+    Rectangle(int w, int h) 
+    {
+        width = w;
+        height = h;
+    }
+
+    // Member function
+    int getArea() 
+    {
+        return width * height;
+    }
+};
+
+int main() 
+{
+    // Creating objects of the class
+    Rectangle rect1(4, 5);
+    Rectangle rect2(3, 6);
+
+    // Accessing member functions
+    std::cout &lt;&lt; "Area of rect1: " &lt;&lt; rect1.getArea() &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Area of rect2: " &lt;&lt; rect2.getArea() &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+        <p>In this code, we define a <code class="single-lines">Rectangle</code> class with private data members <b>width</b> and <b>height</b> and a public member function <code class="single-lines">getArea()</code></p>
+        <p>We create objects <code class="single-lines">rect1</code> and <code class="single-lines">rect2</code> of the class and access their member functions.</p>
+      </article>
+      <article>
+        <h2>Inheritance</h2>
+        <p>Inheritance is a fundamental concept in OOP that allows a class to inherit the properties and behaviors of another class.</p>
+        <p>It promotes code reuse and enables the creation of hierarchies of classes.</p>
+        <p>Here's an example:</p>
+        <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// Base class
+class Shape {
+protected:
+    int width;
+    int height;
+
+public:
+    // Constructor
+    Shape(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    // Member function
+    void displayArea() {
+        std::cout &lt;&lt; "Area: " &lt;&lt; width * height &lt;&lt; std::endl;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape {
+public:
+    // Constructor
+    Rectangle(int w, int h) : Shape(w, h) {}
+
+    // Additional member function
+    void displayPerimeter() {
+        std::cout &lt;&lt; "Perimeter: " &lt;&lt; 2 * (width + height) &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    Rectangle rect(4, 5);
+
+    // Accessing member functions from the base and derived classes
+    rect.displayArea();
+    rect.displayPerimeter();
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we define a base class <code class="single-lines">Shape</code> with private data members <b>width</b> and <b>height</b> and a member function <code class="single-lines">displayArea()</code></p>
+          <p>We then create a derived class <code class="single-lines">Rectangle</code> that inherits from <code class="single-lines">Shape</code> using the <code class="single-lines">public</code> keyword.</p>
+          <p>The derived class adds an additional member function <code class="single-lines">displayPerimeter()</code></p>
+          <p>e create an object <code class="single-lines">rect</code> of the derived class and access member functions from both the base and derived classes.</p>
+        </article>
+      </section>
+    
+      <!--Section 8-->
+      <section class="Main-section" id="Files">
+        <header>Files</header>
+        <article>
+          <p>File input/output (I/O) operations allow us to read data from and write data to files.</p>
+          <p>In this chapter, we will explore file I/O in C++ using file streams.</p>
+        </article>
+        <article>
+          <h2>Writing to a File</h2>
+          <p>To write data to a file in C++, we use the output file stream <code class="single-lines">ofstream</code> class. </p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    std::ofstream outputFile("output.txt");
+
+    if (outputFile.is_open()) {
+        outputFile &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+        outputFile &lt;&lt; 42 &lt;&lt; std::endl;
+        outputFile.close();
+        std::cout &lt;&lt; "Data written to the file." &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "Failed to open the file." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we create an <code class="single-lines">ofstream</code> object named <code class="single-lines">outputFile</code> and open the file <i>"output.txt"</i></p>
+          <p> We then use the <code class="single-lines">&lt;&lt;</code> operator to write data to the file.</p>
+          <p>Finally, we close the file and display a message indicating the success or failure of the operation.</p>
+        </article>
+        <article>
+          <h2>Reading from a File</h2>
+          <p>To read data from a file in C++, we use the input file stream <code class="single-lines">ifstream</code> class.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() 
+{
+    std::ifstream inputFile("input.txt");
+    std::string line;
+
+    if (inputFile.is_open()) 
+    {
+        while (std::getline(inputFile, line)) 
+        {
+            std::cout &lt;&lt; line &lt;&lt; std::endl;
+        }
+        inputFile.close();
+    } 
+    else 
+    {
+        std::cout &lt;&lt; "Failed to open the file." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we create an <code class="single-lines">ifstream</code> object named <code class="single-lines">inputFile</code> and open the file <i>"input.txt"</i>.</p>
+          <p>We use the <code class="single-lines">std::getline()</code> function to read each line from the file and display it on the console.</p>
+          <p>Finally, we close the file.</p>
+        </article>
+      </section>
+      
+      <!--Section 9-->
+      <section class="main-section" id="Exception_Handling">
+        <header>Exception Handling</header>
+        <article>
+          <p>Exception handling allows us to handle runtime errors and abnormal conditions in our code. </p>
+          <p>It provides a mechanism to catch and handle exceptions, preventing program termination.</p>
+          <p>In this chapter, we will explore exception handling in C++ using try-catch blocks.</p>
+        </article>
+        <article>
+          <h2>Exception Handling with Try-Catch</h2>
+          <p>To handle exceptions in C++, we use the <code class="single-lines">try-catch</code> block.</p>
+          <p>The <code class="single-lines">try</code> block contains the code that may throw an exception, while the <code>catch</code> block handles the thrown exception. </p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    try {
+        int num1 = 10;
+        int num2 = 0;
+
+        if (num2 == 0) {
+            throw "Divide by zero exception.";
+        }
+
+        int result = num1 / num2;
+        std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;
+    } catch (const char* message) {
+        std::cout &lt;&lt; "Exception caught: " &lt;&lt; message &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we divide <b>num1</b> by <b>num2</b> and check if <b>num2</b> is zero.</p>
+          <p>If it is, we throw an exception with the message <i>"Divide by zero exception."</i>.</p>
+          <p>The <code class="single-lines">catch</code>catch block catches the exception and displays the error message.</p>
+        </article>
+        <article>
+          <h2>Exception Handling with Multiple Catch Blocks</h2>
+          <p>In C++, we can have multiple catch blocks to handle different types of exceptions. This allows us to handle specific exceptions separately.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() 
+{
+    try 
+    {
+        int num1 = 10;
+        int num2 = 0;
+
+        if (num2 == 0) 
+        {
+            throw "Divide by zero exception.";
+        }
+
+        int result = num1 / num2;
+        std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;
+    } 
+    
+    catch (const char* message) 
+    {
+        std::cout &lt;&lt; "Exception caught: " &lt;&lt; message &lt;&lt; std::endl;
+        
+    }
+    
+    catch (...) 
+    {
+        std::cout &lt;&lt; "Unknown exception caught." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we add an additional <code class="single-lines">catch</code> block with ellipsis <code class="single-lines">(...)</code> to catch any unknown exceptions that were not caught by the previous <code class="single-lines">catch</code> block.</p>
+        </article>
+      </section>
+      
+      <!--Section 10-->
+      <section class="main-section" id="STL">
+        <header>STL</header>
+        <article>
+          <p>The Standard Template Library (STL) is a powerful library in C++ that provides a collection of reusable algorithms and data structures.</p>
+          <p>In this chapter, we will explore some components of the STL, such as vectors, iterators, and algorithms.</p>
+        </article>
+        <article>
+          <h2>Vectors</h2>
+          <p>Vectors are dynamic arrays in C++ that can grow or shrink in size.</p> 
+          <p>They provide a convenient way to store and manipulate collections of elements.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector&lt;int&lt; numbers;
+
+    // Adding elements to the vector
+    numbers.push_back(1);
+    numbers.push_back(2);
+    numbers.push_back(3);
+
+    // Accessing elements
+    std::cout &lt;&lt; "First element: " &lt;&lt; numbers[0] &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Size: " &lt;&lt; numbers.size() &lt;&lt; std::endl;
+
+    // Iterating over the vector
+    for (int i = 0; i &lt; numbers.size(); i++) 
+    {
+        std::cout &lt;&lt; numbers[i] &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we create a vector <code class="single-lines">numbers</code> to store integers.</p>
+          <p>We use the <code class="single-lines">push_back()</code> function to add elements to the vector.</p>
+          <p>We access elements using the square bracket operator <code class="single-lines">[]</code> and retrieve the size of the vector using the <code class="single-lines">size()</code> function. </p>
+          <p>Finally, we iterate over the vector using a <code class="single-lines">for</code> loop and display its elements.</p>
+        </article>
+        <article>
+          <h2>Iterators</h2>
+          <p>Iterators in C++ provide a way to traverse and manipulate the elements of a container, such as a vector.</p>
+          <p>They act as pointers to elements in the container and provide a uniform interface for accessing and modifying the elements.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+
+    // Using iterators to access and modify elements
+    std::vector&lt;int&gt;::iterator it;
+    for (it = numbers.begin(); it != numbers.end(); it++) {
+        std::cout &lt;&lt; *it &lt;&lt; " ";
+        *it *= 2;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    // Displaying modified elements
+    for (const auto& num : numbers) {
+        std::cout &lt;&lt; num &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+          <p>In this code, we create a vector <code class="single-lines">numbers</code> and initialize it with values.</p>
+          <p>We use an iterator <code class="single-lines">it</code> to traverse the vector using the <code class="single-lines">begin()</code> and <code class="single-lines">end()</code> functions.</p>
+          <p>We dereference the iterator using <code class="single-lines">*it</code> to access and modify the elements.</p>
+          <p>Finally, we use a range-based <code class="single-lines">for</code> loop to display the modified elements.</p>
+        </article>
+        <article>
+          <h2>Algorithms</h2>
+          <p>The STL provides a wide range of algorithms that can be applied to containers, such as vectors. </p>
+          <p>These algorithms include sorting, searching, transforming, and more.</p>
+          <p>Here's an example:</p>
+          <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {5, 2, 8, 1, 4};
+
+    // Sorting the vector
+    std::sort(numbers.begin(), numbers.end());
+
+    // Displaying the sorted vector
+    for (const auto& num : numbers) {
+        std::cout &lt;&lt; num &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    // Finding an element in the vector
+    auto it = std::find(numbers.begin(), numbers.end(), 8);
+    if (it != numbers.end()) {
+        std::cout &lt;&lt; "Element found at position: " 
+                  &lt;&lt; std::distance(numbers.begin(), it) 
+                  &lt;&lt; std::endl;
+    } 
+    else 
+    {
+        std::cout &lt;&lt; "Element not found." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+         <p>In this code, we create a vector <code class="single-lines">numbers</code> and initialize it with values.</p>
+          <p>We use the <code class="single-lines">std::sort()</code> algorithm to sort the vector in ascending order.</p>
+          <p> We display the sorted vector using a range-based <code class="single-lines">for</code> loop. </p>
+          <p>We then use the <code class="single-lines">std::find()</code> algorithm to search for the element 8 in the vector and display its position if found.</p>
+          
+          <h3 style="color: darkgreen">Congratulations!</h3> 
+          <p style="color: darkgreen">You have completed the Introduction to C++ documentation. 
+</p>
+          <p style="color: darkgreen; padding-bottom: 35px" >This document provided an overview of C++ and covered essential topics such as variables, control structures, functions, arrays, pointers, OOP, file I/O, exception handling, and the STL.</p>
+        </article>
+      </section>
+    </main>
+    <!--End of main-->
+    
+    <!--Navigation bar-->
+    <nav id="navbar">
+      <header>C++ Documentation</header>
+       <ul>
+         <li><a class="nav-link" href="#Getting_Started_with_C++">Getting Started with C++</a></li>
+         <li><a class="nav-link" href="#Variables_and_Data_Types">Variables and Data Types</a></li>
+         <li><a class="nav-link" href="#Control_Structures">Control Structures</a></li>
+         <li><a class="nav-link" href="#Functions">Functions</a></li>
+         <li><a class="nav-link" href="#Arrays">Arrays</a></li>
+         <li><a class="nav-link" href="#Pointers">Pointers</a></li>
+         <li><a class="nav-link" href="#OOP">OOP</a></li>
+         <li><a class="nav-link" href="#Files">Files</a></li>
+         <li><a class="nav-link" href="#Exception_Handling">Exception Handling</a></li>
+         <li><a class="nav-link" href="#STL">STL</a></li>    
+      </ul>
+    </nav>
+  </body>
+</html>
